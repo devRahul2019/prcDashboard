@@ -46,6 +46,7 @@ import {
   EyeOff,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import SuccessStories from "./SuccessStories ";
 
 interface BookingForm {
   fullName: string;
@@ -138,7 +139,7 @@ const AnimatedCounter = ({
       ref={ref}
       initial={{ opacity: 0, scale: 0.5 }}
       animate={controls}
-      className="text-3xl font-bold text-brand-accent"
+      className="text-3xl font-bold text-yellow-400"
     >
       {count}
       {suffix}
@@ -303,10 +304,10 @@ export default function Index() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="bg-brand-success text-white py-3 px-4 relative overflow-hidden"
+        className="bg-brand-success text-black py-3 px-4 relative overflow-hidden"
       >
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600"
+          className="absolute inset-0 bg-yellow-400"
           animate={{
             backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
           }}
@@ -352,7 +353,7 @@ export default function Index() {
               <Button
                 onClick={handleBookNowClick}
                 variant="outline"
-                className="bg-white text-brand-success border-white hover:bg-yellow-50 text-xs sm:text-sm px-3 sm:px-4 py-2 relative overflow-hidden font-bold"
+                className="bg-[#00303e] text-white border-white  text-xs sm:text-sm px-3 sm:px-4 py-2 relative overflow-hidden font-bold"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500"
@@ -368,7 +369,7 @@ export default function Index() {
       </motion.header>
 
       {/* Hero Section with Advanced Form */}
-      <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 py-8 sm:py-12 lg:py-20 relative overflow-hidden">
+      <section className="bg-[#00303e] py-8 sm:py-12 lg:py-11 relative overflow-hidden">
         <FloatingParticles />
 
         {/* Enhanced background shapes */}
@@ -471,7 +472,7 @@ export default function Index() {
               >
                 <Button
                   onClick={handleBookNowClick}
-                  className="bg-white text-blue-600 hover:bg-yellow-50 font-bold px-6 sm:px-8 py-3 sm:py-4 mb-4 sm:mb-6 relative overflow-hidden group text-base sm:text-lg shadow-2xl"
+                  className="bg-yellow-400 text-black font-bold px-6 sm:px-8 py-3 sm:py-4 mb-4 sm:mb-6 relative overflow-hidden group text-base sm:text-lg shadow-2xl"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400"
@@ -527,8 +528,8 @@ export default function Index() {
               transition={{ duration: 0.3 }}
             >
               {/* Form Header */}
-              <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 p-4 sm:p-6 text-center">
-                <motion.div
+              <div className="bg-[#00303e] p-3 sm:p-4 text-center">
+                {/* <motion.div
                   className="inline-flex items-center bg-yellow-400 text-blue-900 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold mb-3"
                   animate={{
                     boxShadow: [
@@ -545,9 +546,9 @@ export default function Index() {
                 >
                   <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                   FREE QUOTE & DIAGNOSIS
-                </motion.div>
+                </motion.div> */}
 
-                <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">
                   Book Your Repair Today!
                 </h2>
                 <p className="text-blue-100 text-xs sm:text-sm">
@@ -562,7 +563,7 @@ export default function Index() {
                   </div>
                   <div className="w-full bg-white/20 rounded-full h-2 overflow-hidden">
                     <motion.div
-                      className="h-full bg-gradient-to-r from-yellow-400 to-green-400 rounded-full"
+                      className="h-full bg-yellow-400 rounded-full"
                       initial={{ width: 0 }}
                       animate={{ width: `${formProgress}%` }}
                       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -572,7 +573,7 @@ export default function Index() {
               </div>
 
               {/* Form Body */}
-              <div className="p-4 sm:p-6">
+              <div className="p-4 sm:p-4">
                 <form
                   onSubmit={handleSubmit}
                   className="space-y-4 sm:space-y-5"
@@ -754,11 +755,11 @@ export default function Index() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full h-12 sm:h-14 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 text-white font-bold text-base sm:text-lg relative overflow-hidden group shadow-xl rounded-xl"
+                      className="w-full h-12 sm:h-14 bg-yellow-400 text-black font-bold text-base sm:text-lg relative overflow-hidden group shadow-xl rounded-xl"
                     >
                       {/* Animated shine effect */}
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                        className="absolute inset-0"
                         animate={{
                           x: ["-100%", "100%"],
                         }}
@@ -836,14 +837,14 @@ export default function Index() {
       {/* Rest of the sections with tighter spacing... */}
       {/* Complimentary Screen Protector Section */}
       <motion.section
-        className="bg-brand-success text-white py-3 relative overflow-hidden"
+        className="bg-brand-success text-black py-3 relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600"
+          className="absolute inset-0 bg-yellow-400"
           animate={{
             backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
           }}
@@ -879,7 +880,7 @@ export default function Index() {
             </h3>
           </motion.div>
           <motion.p
-            className="mt-2 text-green-100 text-sm"
+            className="mt-2 text-black text-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -893,7 +894,7 @@ export default function Index() {
 
       {/* About Section with Counters - Tighter spacing */}
       <motion.section
-        className="py-10 bg-gray-50"
+        className="py-7 bg-gray-50"
         initial="hidden"
         whileInView="visible"
         variants={staggerContainer}
@@ -990,7 +991,7 @@ export default function Index() {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="text-center group"
+                className="text-center group rounded-lg border p-3"
                 variants={fadeInUp}
                 initial="rest"
                 whileHover="hover"
@@ -1022,7 +1023,7 @@ export default function Index() {
 
       {/* Devices We Repair - 3D Card Effects */}
       <motion.section
-        className="py-10 bg-gray-50"
+        className="py-7 bg-gray-50"
         initial="hidden"
         whileInView="visible"
         variants={staggerContainer}
@@ -1134,7 +1135,7 @@ export default function Index() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 onClick={handleBookNowClick}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 relative overflow-hidden group"
+                className="bg-yellow-400 text-black px-6 py-3 relative overflow-hidden group"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500"
@@ -1316,11 +1317,11 @@ export default function Index() {
           </motion.div>
         </div>
       </motion.section>
-
+      <SuccessStories />
       {/* Footer with Parallax */}
       <motion.footer
         className="bg-brand-secondary text-white py-8 relative"
-        style={{ y }}
+        // style={{ y }}
       >
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
@@ -1344,32 +1345,34 @@ export default function Index() {
                 <div className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Kiosk 1/227 Railway Terrace, Schofields NSW 2762</p>
                     <motion.button
                       onClick={() =>
-                        handleAddressClick("1/2 Queen St, St Marys NSW 2760")
+                        handleAddressClick(
+                          "https://www.google.com/maps/place/122+Queen+St,+St+Marys+NSW+2760,+Australia/@-33.7586704,150.756797,5340m/data=!3m1!1e3!4m6!3m5!1s0x6b129ab1929d4f97:0x103feb9784d7d023!8m2!3d-33.766127!4d150.7743917!16s%2Fg%2F11b8y9vjx6?entry=ttu&g_ep=EgoyMDI1MDYwMi4wIKXMDSoASAFQAw%3D%3D",
+                        )
                       }
                       className="hover:text-brand-accent transition-colors cursor-pointer"
                       whileHover={{ scale: 1.05 }}
                     >
-                      1/2 Queen St, St Marys NSW 2760
+                      122 Queen St, St Marys NSW 2760, Australia
                     </motion.button>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Schofields</p>
+                    {/* <p className="font-medium">Schofields</p> */}
                     <motion.button
                       onClick={() =>
                         handleAddressClick(
-                          "Kiosk 1/207 Railway Terrace, Schofields NSW 2762",
+                          "https://www.google.com/maps/place/TechCity+Schofields+Phone+Repair/@-33.7057889,150.8759664,859m/data=!3m2!1e3!4b1!4m6!3m5!1s0x6b129f1f16bc4395:0xf55b68eeebf4e2e2!8m2!3d-33.7057889!4d150.8759664!16s%2Fg%2F11smlzr8dn?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
                         )
                       }
                       className="hover:text-brand-accent transition-colors cursor-pointer"
                       whileHover={{ scale: 1.05 }}
                     >
-                      Kiosk 1/207 Railway Terrace, Schofields NSW 2762
+                      Kiosk 1/227 Railway Terrace, Schofields NSW 2762,
+                      Australia
                     </motion.button>
                   </div>
                 </div>
@@ -1395,10 +1398,13 @@ export default function Index() {
                   <Phone className="w-4 h-4" />
                   <span>(02) 7252 7141</span>
                 </motion.button>
-                <div className="flex items-center gap-2">
+                <a
+                  className="flex items-center gap-2"
+                  href="mailto:service@prcrepair.com.au"
+                >
                   <Mail className="w-4 h-4" />
                   <span>service@prcrepair.com.au</span>
-                </div>
+                </a>
               </div>
 
               <motion.div
@@ -1429,9 +1435,10 @@ export default function Index() {
             viewport={{ once: true }}
           >
             <p>
-              © 2024 PRC Repair. All rights reserved. Fast, friendly &
-              hassle-free device repairs.
+              © {new Date().getFullYear()} PRC Repair. All rights reserved.
+              Fast, friendly & hassle-free device repairs.
             </p>
+
             <div className="flex gap-4 mt-3 lg:mt-0">
               <span>FREE Screen Protector with Screen Repairs</span>
               <span>•</span>
